@@ -4,7 +4,7 @@ import pandas as pd
 import re
 # torch==1.12.1
 
-xls = pd.ExcelFile(r"final_revision.xlsx")
+xls = pd.ExcelFile(r"New Sentences.xlsx")
 sheetX = xls.parse(0)
 var1 = sheetX['Banglish'].astype('string')
 
@@ -22,7 +22,7 @@ bntrans = BNTransliteration(model_path)
 # * =======================================
 
 out_csv = []
-output_file = "output.xlsx"
+output_file = "output_new_sentences.csv"
 
 # for i in range(len(unmodified)):
 for i in range(len(var1)):
@@ -30,7 +30,7 @@ for i in range(len(var1)):
     try:
         out_text = ""
         semi_mod = var1[i].replace('/', ' ')
-        modified = re.split('\s+|\…|\.+|\?+|\,+|\&+|\-+|\:+|\(+|\)+|\।+|\“+|\”+|\’+|\;+|\++', semi_mod.lower())
+        modified = re.split('\s+|\…|\.+|\?+|\,+|\&+|\-+|\:+|\(+|\)+|\।+|\“+|\”+|\’+|\;+|\++|\\\\', semi_mod.lower())
         modified = list(filter(lambda x : x != '', modified))
         # print(modified)
         for i in range(len(modified)):
@@ -54,7 +54,7 @@ for i in range(len(var1)):
 #     df3.to_excel(writer, sheet_name='Sheet1', header=None)
 
 for i in range(len(out_csv)):
-    with open('output.csv', "ab") as file:
+    with open(output_file, "ab") as file:
         foo = f"\"{out_csv[i]}\",\n"
         file.write(foo.encode('utf-8'))
 

@@ -9,7 +9,7 @@ import pandas as pd
 import re
 
 
-xls = pd.ExcelFile(r"final_revision.xlsx")
+xls = pd.ExcelFile(r"New Sentences.xlsx")
 sheetX = xls.parse(0)
 var1 = sheetX['Banglish'].astype('string')
 
@@ -37,7 +37,7 @@ in_text = driver.find_element(
 # ]
 
 out_csv = []
-output_file = "output.xlsx"
+output_file = "output_new_sentences.xlsx"
 
 # for i in range(len(unmodified)):
 for i in range(len(var1)):

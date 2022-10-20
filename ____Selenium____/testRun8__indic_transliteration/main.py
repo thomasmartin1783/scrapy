@@ -5,13 +5,13 @@ from indic_transliteration.sanscript import SchemeMap, SCHEMES, transliterate
 import pandas as pd
 
 
-xls = pd.ExcelFile(r"final_revision.xlsx")
+xls = pd.ExcelFile(r"New Sentences.xlsx")
 sheetX = xls.parse(0)
 var1 = sheetX['Banglish'].astype('string')
 
 
 out_csv = []
-output_file = "output_xl.xlsx"
+output_file = "output_xl_new_sentences.xlsx"
 
 for i in range(len(var1)):
     # out_csv = []
