@@ -1,0 +1,56 @@
+https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-python.html
+
+conda
+
+conda list
+conda env list 
+conda config --show channels
+
+conda create --name ai38 python=3.8
+conda activate ai38
+conda deactivate
+
+conda install pytorch
+conda install -c main pytorch
+conda config --add channels main
+conda config --add channels conda-forge
+conda install ablog
+
+conda config --get channels
+
+pip install tensorflow==1.14.0
+
+
+===========================================
+
+Updating conda to the current version
+To update conda, in your terminal window or an Anaconda Prompt, run:
+
+conda update conda
+
+===========================================
+Viewing a list of available Python versions
+To list the versions of Python that are available to install, in your terminal window or an Anaconda Prompt, run:
+
+conda search python
+
+===========================================
+
+
+Updating or upgrading Python
+Use the terminal or an Anaconda Prompt for the following steps.
+
+If you are in an environment with Python version 3.4.2, the following command updates Python to the latest version in the 3.4 branch:
+
+conda update python
+
+===========================================
+
+The following command upgrades Python to another branch---3.8---by installing that version of Python. It is not recommended, rather it is preferable to create a new environment. The resolver has to work very hard to determine exactly which packages to upgrade. But it is possible, and the command is:
+
+conda install python=3.8
+
+===========================================
+
+
+
